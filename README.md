@@ -1,15 +1,18 @@
 # CakePHP Captcha Plugin for CakePHP 3.5.*
 
-######Image captcha, Math captcha and Google-recaptcha
+**Image captcha, Math captcha and Google-recaptcha support for CakePHP**
 
 A demo can be found here (coming soon)
 
-For any questions queries please visit this link (coming soon)
+For questions queries please visit this link (coming soon)
 
 ## Installation
 
-1. Install with composer (coming soon.. skip to next option for now)
-2. Download and copy all files to new plugin in your cakephp 3 application as <ROOT>/plugins/captcha folder
+###### Install via Composer
+(coming soon.. skip to download option)
+
+###### Install via Download
+Download and copy all files to your cakephp 3 application, to new captcha folder in your app's <ROOT>/plugins/ folder
 
 ## Configuration
 
@@ -31,7 +34,7 @@ For any questions queries please visit this link (coming soon)
 	$this->Users->setCaptcha('securitycode', $this->Captcha->getCode('securitycode'));
         $user = $this->Users->patchEntity($user, $this->request->data);
 
-## Update
+## Updates
 
 No update available
 
