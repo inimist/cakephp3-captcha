@@ -9,9 +9,11 @@ For questions queries please visit this link (coming soon)
 ## Installation
 
 **Install via Composer**
+
 (coming soon.. skip to download option)
 
 **Install via Download**
+
 Download and copy all files to your app's <ROOT>/plugins/captcha folder of your cakephp 3 application 
 	
 OR
