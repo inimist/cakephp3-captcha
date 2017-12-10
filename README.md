@@ -40,7 +40,7 @@ Download and copy all files to your cakephp 3 application, to new captcha folder
 
 	```
 	$this->Users->setCaptcha('securitycode', $this->Captcha->getCode('securitycode'));
-        $user = $this->Users->patchEntity($user, $this->request->data);
+$user = $this->Users->patchEntity($user, $this->request->data);
 	```
 	
 	
