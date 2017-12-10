@@ -38,8 +38,10 @@ Download and copy all files to your cakephp 3 application, to new captcha folder
 
 	just before patching entity. For example:
 
-	```$this->Users->setCaptcha('securitycode', $this->Captcha->getCode('securitycode'));
-        $user = $this->Users->patchEntity($user, $this->request->data);```
+	```
+	$this->Users->setCaptcha('securitycode', $this->Captcha->getCode('securitycode'));
+        $user = $this->Users->patchEntity($user, $this->request->data);
+	```
 	
 	
 That should be it.
