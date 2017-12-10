@@ -54,6 +54,50 @@ $ git clone https://github.com/inimist/cakephp3-captcha.git captcha
 	
 See **example/src** folder for a working example.
 
+##More examples
+
+###Custom settings:
+
+    echo $this->Form->create("Signups");
+    $custom1['width']=150;
+    $custom1['height']=50;
+    $custom1['theme']='default';
+    $this->Captcha->render($custom1);
+
+###Multiple captchas:
+
+    //form 1
+    echo $this->Form->create("Signups");
+    $custom1['width']=150;
+    $custom1['height']=50;
+    $this->Captcha->render($custom1);
+
+    //form 2, A math captcha, anywhere on the page
+    echo $this->Form->create("Users");
+    $custom2['type']='math';
+    $this->Captcha->render($custom2);
+
+
+**Settings that can be set in your view file:**
+
+* *model*: model name.
+* *field*: field name.
+* *type*: image or math. If set to 'math' all following settings will be 
+obsolete
+* *width*: width of image captcha
+* *height*: height of image captcha
+* *theme*: theme/difficulty image captcha
+* *length*: number of characters in image captcha
+* *angle*: angle of rotation for characters in image captcha
+
+Additional settings that can be set in Component file.
+
+* *fontAdjustment*: Responsible for the font size relational to Captcha Image 
+Size
+* *reload_txt*: The phrase which appears as a Captcha Reload link
+* *clabel*: Label for Image Captcha Value input field
+* *mlabel*: Label for Math Captcha Value input field
+
 That should be it.
 
 ## Known Issues:
@@ -73,3 +117,10 @@ No update available
 Three basic options, image captcha, math captcha and google-recaptcha
 
 Check older version for more options here.. These should be valid in this version as well.
+
+
+-----------------------------
+Looking for a CakePHP Developer?
+-----------------------------
+* I like to build Websites in **CakePHP** & **Wordpress**. [Contact me](http://devarticles.in/contact/).
+* Upwork: https://www.upwork.com/freelancers/~01ea3d34e0a88133b3
