@@ -80,7 +80,6 @@ See **example/src** folder for a working example.
 
 **Settings that can be set in your view file:**
 
-* *model*: model name.
 * *field*: field name.
 * *type*: image or math. If set to 'math' all following settings will be 
 obsolete
@@ -90,7 +89,7 @@ obsolete
 * *length*: number of characters in image captcha
 * *angle*: angle of rotation for characters in image captcha
 
-Additional settings that can be set in Component file.
+Additional settings that can be set.
 
 * *fontAdjustment*: Responsible for the font size relational to Captcha Image 
 Size
