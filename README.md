@@ -1,6 +1,6 @@
 # CakePHP Captcha Plugin for CakePHP 3.5.*
 
-###image captcha, math captcha and google-recaptcha
+######Image captcha, Math captcha and Google-recaptcha
 
 A demo can be found here (coming soon)
 
