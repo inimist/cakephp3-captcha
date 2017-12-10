@@ -12,11 +12,11 @@ For questions queries please visit this link (coming soon)
 (coming soon.. skip to download option)
 
 **Install via Download**
-Download and copy all files to your cakephp 3 application, to new captcha folder in your app's <ROOT>/plugins/ folder
+Download and copy all files to your app's <ROOT>/plugins/captcha folder of your cakephp 3 application 
 	
 OR
 	
-In the command line, cd to your app's plugins folder and run git clone
+In the command line, cd command to your app's plugins folder and run git clone
 
 ```
 $ cd myapp/plugins
