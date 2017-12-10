@@ -23,7 +23,7 @@ $ cd myapp/plugins
 $ git clone https://github.com/inimist/cakephp3-captcha.git captcha
 ```
 
-## Configuration
+## Implementation
 
 1. Load **Captcha** plugin.
 
@@ -52,7 +52,8 @@ $ git clone https://github.com/inimist/cakephp3-captcha.git captcha
 	$user = $this->Users->patchEntity($user, $this->request->data);
 	```
 	
-	
+See **example/src** folder for a working example.
+
 That should be it.
 
 ## Known Issues:
