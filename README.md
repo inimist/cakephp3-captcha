@@ -34,6 +34,12 @@ $ git clone https://github.com/inimist/cakephp3-captcha.git captcha
 2. Load **Capthca component**
 
 	Place ```$this->loadComponent('Captcha.Captcha');``` in your controllerr's **initialize** function
+	
+	OR
+	
+	Load Captcha component on the fly, in the particular controller action. For example in the add() action:
+	
+	```$$this->loadComponent('Captcha.Captcha'); //or load on the fly!```$
 
 3. Add Behavior to your Model/Table
 
