@@ -8,31 +8,31 @@ For questions queries please visit this link (coming soon)
 
 ## Installation
 
-###### Install via Composer
+**Install via Composer**
 (coming soon.. skip to download option)
 
-###### Install via Download
+**Install via Download**
 Download and copy all files to your cakephp 3 application, to new captcha folder in your app's <ROOT>/plugins/ folder
 
 ## Configuration
 
-1. Place *Plugin::load('Captcha', ['routes' => true, 'autoload' => true]);* in your application's bootstrap.php file.
+1. Place ```Plugin::load('Captcha', ['routes' => true, 'autoload' => true]);``` in your application's **bootstrap.php** file.
 
-2. Place *$this->loadComponent('Captcha.Captcha');* in your controllerr's initialize function
+2. Place ```$this->loadComponent('Captcha.Captcha');``` in your controllerr's **initialize** function
 
-3. Place  *$this->addBehavior('Captcha.Captcha', ['field'=>'<fieldname>'])* in your model (Table class)
+3. Place  ```$this->addBehavior('Captcha.Captcha', ['field'=>'<fieldname>'])``` in your **Model** (Table class)
 
-4. Create an input field in your form as:
-	echo $this->Captcha->create('<fieldname>');
+4. Create an input field in your view's **form** as:
+	```echo $this->Captcha->create('<fieldname>');```
 
 5. Place:
 
-	$this->Users->setCaptcha('<fieldname>', $this->Captcha->getCode('<fieldname>'));
+	```$this->Users->setCaptcha('<fieldname>', $this->Captcha->getCode('<fieldname>'));```
 
 	in your controller, just before patching entity. For example:
 
-	$this->Users->setCaptcha('securitycode', $this->Captcha->getCode('securitycode'));
-        $user = $this->Users->patchEntity($user, $this->request->data);
+	```$this->Users->setCaptcha('securitycode', $this->Captcha->getCode('securitycode'));
+        $user = $this->Users->patchEntity($user, $this->request->data);```
 
 ## Updates
 
