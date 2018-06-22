@@ -2,7 +2,7 @@
 
 **Image captcha, Math captcha and Google-recaptcha support for CakePHP**
 
-A demo can be found here (coming soon)
+<a href="https://captcha.inimisttech.com">Demo</a>
 
 For questions queries please visit this link (coming soon)
 
