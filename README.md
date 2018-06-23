@@ -10,7 +10,11 @@ For questions queries please visit this link (coming soon)
 
 **Install via Composer**
 
-(coming soon.. skip to download option)
+```composer require inimist/cakephp-captcha```
+
+and
+
+```bin/cake plugin load Captcha -b -r```
 
 **Install via Download**
 
