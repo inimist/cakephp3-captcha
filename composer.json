@@ -23,5 +23,5 @@
 	},
     "support": {
 		"source": "https://github.com/inimist/cakephp3-captcha"
-	},
+	}
 }
