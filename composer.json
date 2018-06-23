@@ -1,0 +1,13 @@
+{
+    "name": "inimist/captcha",
+    "description": "CakePHP Captcha Plugin, Image, Match and Google Recaptcha Support",
+    "authors": [
+        {
+            "name": "Arvind Kumar",
+            "email": "arvind@inimisttech.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    }
+}
