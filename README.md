@@ -34,6 +34,7 @@ $ git clone https://github.com/inimist/cakephp3-captcha.git captcha
 1. Load **Captcha** plugin.
 
 	If you ran ```bin/cake plugin load Captcha -b -r``` above skip this step.
+	
 	Place ```Plugin::load('Captcha', ['routes' => true, 'autoload' => true]);``` in your application's **Application.php** or **bootstrap.php** file, whichever applicable.
 
 2. Load **Capthca component**
