@@ -11,7 +11,6 @@
             "email": "arvind@inimisttech.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
 		"php": ">=5.6",
 		"cakephp/cakephp": "^3.0.0"
