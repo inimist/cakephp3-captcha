@@ -1,5 +1,6 @@
 {
-    "name": "inimist/cakephp-captcha",
+    "version": "1.0",
+	"name": "inimist/cakephp-captcha",
     "type": "cakephp-plugin",
     "description": "CakePHP Captcha Plugin, Image, Match and Google Recaptcha Support",
     "keywords": ["cakephp", "plugin", "captcha", "security", "recaptcha"],
