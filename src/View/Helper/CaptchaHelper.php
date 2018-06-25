@@ -2,8 +2,8 @@
 /**
  * Helper for the use of Captcha
  * @author     Arvind Kumar
- * @link       http://inimist.com/
- * @copyright  Copyright © 2014 http://inimist.com/
+ * @link       http://inimisttech.com/
+ * @copyright  Copyright © 2014 http://inimisttech.com/
  * @version 3.0 - Tested with Cakephp 3.5.x
  */
 
@@ -26,6 +26,13 @@ class CaptchaHelper extends Helper {
         'type'=>'image',
         'theme'=>'default',
         'sitekey'=>'xxxxxxxxxxxxxxxxxxxxxx-xx', //add sitekey if it is Google Recaptcha
+        'plugin'=>'Captcha',
+        'controller'=>'Captcha',
+        'action'=>'create',
+        'width'=>120,
+        'height'=>40,
+        'length'=>6
+        
     ];
 
 /**
@@ -51,9 +58,9 @@ class CaptchaHelper extends Helper {
 
         $this->_config['reload_txt'] = isset( $this->_config['reload_txt']) ? __($this->_config['reload_txt']) : __('Can\'t read? Reload');
 
-        $this->_config['clabel'] = isset( $this->_config['clabel']) ? __($this->_config['clabel']) : __('<p>Enter security code shown above:</p>');
+        $this->_config['clabel'] = isset( $this->_config['clabel']) ? __($this->_config['clabel']) : __('Enter security code shown above:');
 
-        $this->_config['mlabel'] = isset( $this->_config['mlabel']) ? __($this->_config['mlabel']) : __('<p>Answer Simple Math</p>');
+        $this->_config['mlabel'] = isset( $this->_config['mlabel']) ? __($this->_config['mlabel']) : __('Answer Simple Math');
 
         $plugin = $this->_config['plugin'];
         $controller = ucfirst( $this->_config['controller']);
