@@ -25,7 +25,7 @@ class CaptchaHelper extends Helper {
     protected $_defaultConfig = [
         'type'=>'image',
         'theme'=>'default',
-        'sitekey'=>'xxxxxxxxxxxxxxxxxxxxxx-xx', //add sitekey if it is Google Recaptcha
+        'sitekey'=>'xxxxxxxxxxxxxxxxxxxxxx-xx', //add sitekey here or in view file if it is Google Recaptcha
         'plugin'=>'Captcha',
         'controller'=>'Captcha',
         'action'=>'create',

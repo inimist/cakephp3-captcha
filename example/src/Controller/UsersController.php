@@ -27,7 +27,7 @@ class UsersController extends AppController
     public function add()
     {
         $user = $this->Users->newEntity();
-        $this->loadComponent('Captcha.Captcha'); //or load on the fly!
+        $this->loadComponent('Captcha.Captcha'); //load on the fly!
         if ($this->request->is('post')) {
             $this->Users->setCaptcha('securitycode', $this->Captcha->getCode('securitycode'));
             $user = $this->Users->patchEntity($user, $this->request->data);

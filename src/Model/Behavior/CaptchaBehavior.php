@@ -36,7 +36,7 @@ class CaptchaBehavior extends Behavior
 	protected $_defaultConfig = [
 		'field' => 'captcha',
 		'message' => 'Captcha validation failed',
-		'secret'=>'',
+		'secret'=>'6LduQEIUAAAAAMnyTuphvophucpjtr0DN62gS1yL',
 	];
 
 	private $captcha = null;
