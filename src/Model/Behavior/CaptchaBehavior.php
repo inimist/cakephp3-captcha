@@ -4,13 +4,13 @@
  *
  * Behavior to handles Captcha verification
  *
- * PHP version 5+ and CakePHP version 2.6+
+ * PHP version 5.6.31+ and CakePHP version 3.5+
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the copyright notice.
  *
  * @category    Behavior
- * @version     1.2
+ * @version     1.0
  * @author      Arvind Kumar <arvind.mailto@gmail.com>
  * @copyright   Copyright (C) Arvind Kumar
  * @license     MIT License (http://www.opensource.org/licenses/mit-license.php)

@@ -3,8 +3,9 @@
  * Helper for the use of Captcha
  * @author     Arvind Kumar
  * @link       http://inimisttech.com/
- * @copyright  Copyright © 2014 http://inimisttech.com/
- * @version 3.0 - Tested with Cakephp 3.5.x
+ * @copyright  Copyright © 2018 http://inimisttech.com/
+ * @License  MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @version 1.0 - Tested with Cakephp 3.6
  */
 
 namespace Captcha\View\Helper;

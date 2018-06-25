@@ -6,14 +6,14 @@
  *
  * PHP versions > 5.6.31
  *
- * @copyright Copyright (c) Arvind K. (http://inimist.com/)
+ * @copyright Copyright (c) Arvind K. (http://inimisttech.com/)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @author     Arvind K. (arvind@inimist.com)
+ * @author     Arvind K. (arvind@inimisttech.com)
  *
- * @version 3
+ * @version 1.0
  *
  * @license     MIT License (http://www.opensource.org/licenses/mit-license.php)
  *
@@ -62,6 +62,12 @@
  * 2015-01-22  - Tested with Cakephp 2.6.0
  * 2015-10-16  - Tested with Cakephp 2.7.5
  * 2015-10-31  - Tested with Cakephp 3.1.1
+ * 2017-09-12  - Tested with Cakephp 3.5.*
+               - Added captcha support as a plugin
+               - Added Google Recpatcha as a new challenge
+ * 2018-06-25  - Tested with Cakephp 3.6
+               - Added support to install via composer
+               - fixed bugs in Helper
  *
  */
 namespace Captcha\Controller\Component;
