@@ -10,7 +10,7 @@ For questions queries please visit this link (coming soon)
 
 **Install via Composer**
 
-```composer require inimist/cakephp-captcha```
+```composer require inimist/cakephp-captcha:dev-master```
 
 and
 
@@ -33,7 +33,7 @@ $ git clone https://github.com/inimist/cakephp3-captcha.git captcha
 
 1. Load **Captcha** plugin.
 
-	Place ```Plugin::load('Captcha', ['routes' => true, 'autoload' => true]);``` in your application's **bootstrap.php** file.
+	Place ```Plugin::load('Captcha', ['routes' => true, 'autoload' => true]);``` in your application's **Application.php** or **bootstrap.php** file, whichever applicable.
 
 2. Load **Capthca component**
 
@@ -41,7 +41,7 @@ $ git clone https://github.com/inimist/cakephp3-captcha.git captcha
 	
 	OR
 	
-	Load Captcha component on the fly, in the particular controller action. For example in the add() action:
+	Load Captcha component on the fly, in the particular controller **action** function. For example in the signup() action:
 	
 	```$$this->loadComponent('Captcha.Captcha'); //or load on the fly!```$
 
@@ -117,11 +117,11 @@ That should be it.
 
 2. **GD library** and True Type Font (**TTF**) support extensions are enabled in PHP.
 
-3. This captcha script uses three font faces, **anonymous**, **droidsans** and **ubuntu**  to generate fonts in the captcha images. These font faces are placed in the **captcha/src/Lib/Fonts** of this download. I have seen that these font files are corrupted in some downloads. If you see font not found error in your error logs and captcha are failed to generate, try downloading these font faces from their respective sources and replace them in the mentioned folder.
+3. This captcha script uses three font faces, **anonymous**, **droidsans** and **ubuntu**  to generate fonts in the captcha images. These font faces are placed in the **captcha/src/Lib/Fonts** of this download. I have seen that, sometimes, these font files get corrupted during downloads. If you see font not found error in your error logs and captcha are failed to generate, try downloading these font faces from their respective sources and replace them in the mentioned folder. You can also use different font families by placing them Fonts folder and referencing them in the **CaptchaComponent.php** component file.
 
 ## Updates
 
-No update available
+2018-06-25 - Added ability to install via composer
 
 ## Layout
 
@@ -133,5 +133,5 @@ Check older version for more options here.. These should be valid in this versio
 -----------------------------
 Looking for a CakePHP Developer?
 -----------------------------
-* I like to build Websites in **CakePHP** & **Wordpress**. [Contact me](http://devarticles.in/contact/).
+* I like to help with building websites, CRMs, SaaS applications and custom solutions using **CakePHP** & **Wordpress**. [Contact me](https://inimisttech.com/contact/).
 * Upwork: https://www.upwork.com/freelancers/~01ea3d34e0a88133b3
