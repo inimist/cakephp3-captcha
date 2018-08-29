@@ -1,4 +1,4 @@
-# CakePHP Captcha Plugin for CakePHP 3
+# CakePHP Captcha Plugin
 
 **Image captcha, Math captcha and Google-recaptcha support for CakePHP**  <a href="https://github.com/inimist/cakephp-captcha">See CakePHP 1 & 2 version</a>
 
