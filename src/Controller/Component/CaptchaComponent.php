@@ -149,7 +149,7 @@ class CaptchaComponent extends Component	{
     public function initialize(array $config)
     {
         //debug($this->Session->read());
-        $this->Session = $this->request->session();
+        $this->Session = $this->request->getSession();
         $this->__init();
     }
 
@@ -207,7 +207,7 @@ class CaptchaComponent extends Component	{
      */
     function __setDefaults()    {
 
-        $q = $this->Controller->request->query;
+        $q = $this->Controller->request->getQuery();
         if(!$q) return;
 
         //Preference is given the settings parameter passed through helper

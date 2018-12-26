@@ -84,7 +84,7 @@ class CaptchaHelper extends Helper {
 
                 $html .= $this->Html->image(array('plugin'=>$plugin, 'controller'=>$controller, 'action'=>$action, '?'=> $qstring), array('hspace'=>2));
                 $html .= $this->Html->link( $this->_config['reload_txt'], '#', array('class' => 'creload', 'escape' => false));
-                $html .= $this->Form->input($field, array('autocomplete'=>'off','label'=> $this->_config['clabel'],'class'=>'clabel'));
+                $html .= $this->Form->control($field, array('autocomplete'=>'off','label'=> $this->_config['clabel'],'class'=>'clabel'));
             break;
             case 'math':
                 $qstring = array_merge($qstring, array('type'=>'math'));
@@ -92,7 +92,8 @@ class CaptchaHelper extends Helper {
                     $html .= $this->_config['mlabel'] .  $this->_config['stringOperation'].' = ?';
                 }   else    {
                     ob_start();
-                    $this->View->requestAction(array('plugin'=>$plugin, 'controller'=>$controller, 'action'=>$action, '?'=> $qstring));
+					//pr(array('plugin'=>$plugin, 'controller'=>$controller, 'action'=>$action, '?'=> $qstring));
+                    @$this->View->requestAction(array('plugin'=>$plugin, 'controller'=>$controller, 'action'=>$action, '?'=> $qstring));
                     $mathstring = ob_get_contents();
                     ob_end_clean();
                 }
@@ -100,13 +101,13 @@ class CaptchaHelper extends Helper {
                 if($this->Form->isFieldError($field)) $errorclass = 'error';
                 $html .= '<div class="input text required '.$errorclass.'">' . $this->Form->label($field, $this->_config['mlabel']) . '</div>';
                 $html .= '<div><strong>' . $mathstring . '</strong>' . ' = ?</div>';
-                $html .= $this->Form->input($field, array('autocomplete'=>'off','label'=>false,'class'=>''));
+                $html .= $this->Form->control($field, array('autocomplete'=>'off','label'=>false,'class'=>''));
             break;
             case 'recaptcha':
                 if(!isset($this->_config['sitekey']) OR empty($this->_config['sitekey']))	{
                     $html .= sprintf('<div class="captcha-error">%s</div>', __('Missing Repatcha Site Key'));
                 }	else	{
-                    $html .= $this->Form->input($field, array('value'=>'grecaptcha', 'label'=>__('Human Check'), 'style'=>'visibility:hidden;margin:0;padding:0;height:0;'));
+                    $html .= $this->Form->control($field, array('value'=>'grecaptcha', 'label'=>__('Human Check'), 'style'=>'visibility:hidden;margin:0;padding:0;height:0;'));
                     $html .= '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
                     $html .= '<div class="g-recaptcha" data-sitekey="'.$this->_config['sitekey'].'"></div>';
                 }

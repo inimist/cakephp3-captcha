@@ -25,12 +25,12 @@ class CaptchaController extends AppController
     }
     public function beforeFilter(\Cake\Event\Event $event)
     {
-        if(is_object($this->Auth)) $this->Auth->allow(['create']);
+        if(isset($this->Auth) && is_object($this->Auth)) $this->Auth->allow(['create']);
     }
     function create()	{
         $this->autoRender = false;
         $this->loadComponent('Captcha.Captcha'); //or load on the fly!
-        $this->viewBuilder()->layout('ajax');
+        $this->viewBuilder()->setLayout('ajax');
         $this->Captcha->create();
     }
 }
