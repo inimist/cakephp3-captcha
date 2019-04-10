@@ -45,7 +45,7 @@ $ git clone https://github.com/inimist/cakephp3-captcha.git captcha
 	
 	Load Captcha component on the fly, in the particular controller **action** function. For example in the signup() action:
 	
-	```$$this->loadComponent('Captcha.Captcha'); //or load on the fly!```$
+	```$this->loadComponent('Captcha.Captcha'); //or load on the fly!```$
 
 3. Add Behavior to your Model/Table
 
@@ -76,20 +76,26 @@ See **example/src** folder for a working example.
     $custom1['width']=150;
     $custom1['height']=50;
     $custom1['theme']='default';
-    $this->Captcha->render($custom1);
+    echo $this->Captcha->create('captcha_input_field_name', $custom1);
+    echo $this->Form->button(__('Submit'));
+    echo $this->Form->end();
 
 ###Multiple captchas:
 
     //form 1
-    echo $this->Form->create("Signups");
+    echo $this->Form->create("Signups",['url' => ['controller'=>'signups','action' =>'add']]);
     $custom1['width']=150;
     $custom1['height']=50;
-    $this->Captcha->render($custom1);
+    echo $this->Captcha->create('captcha_input_field_name1', $custom1);
+    echo $this->Form->button(__('Submit'));
+    echo $this->Form->end();
 
     //form 2, A math captcha, anywhere on the page
-    echo $this->Form->create("Users");
+    echo $this->Form->create("Users", ['url' => ['controller'=>'users','action' => 'add']]);
     $custom2['type']='math';
-    $this->Captcha->render($custom2);
+    echo $this->Captcha->create('captcha_input_field_name2', $custom2);
+    echo $this->Form->button(__('Submit'));
+    echo $this->Form->end();
 
 
 **Settings that can be set in your view file:**
