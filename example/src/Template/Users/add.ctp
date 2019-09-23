@@ -3,13 +3,14 @@
     <fieldset>
         <legend><?= __('Add User') ?></legend>
         <?php
-            echo $this->Form->input('email');
-			echo $this->Form->input('name');
-            echo $this->Form->input('password');
+            echo $this->Form->control('email');
+			echo $this->Form->control('name');
+            echo $this->Form->control('password');
             echo $this->Captcha->create('securitycode', [
-                'type'=>'image', // 'recaptcha' or 'math'
+                'type'=>'recaptcha', // 'recaptcha' or 'math'
                 //'sitekey'=>'xxxxxxxxxxxxxxxxxxxxxx-xx', //set if it is recaptcha
-                //'theme'=>'random'
+                'sitekey'=>'6Ld3PDIUAAAAANVO9VTHbMxoAGF-tjhFmEeMqTEx', //set if it is recaptcha
+                'theme'=>'random'
             ]);
         ?>
     </fieldset>
