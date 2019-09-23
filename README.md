@@ -129,7 +129,7 @@ That should be it.
 
 ## Updates
 
-2018-06-25 - Added ability to install via composer
+2019-09-23 - Tested with CakePHP 3.8
 
 ## Layout
 
