@@ -30,7 +30,7 @@ class UsersController extends AppController
         $this->loadComponent('Captcha.Captcha'); //load on the fly!
         if ($this->request->is('post')) {
             $this->Users->setCaptcha('securitycode', $this->Captcha->getCode('securitycode'));
-            $user = $this->Users->patchEntity($user, $this->request->data);
+            $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
             } else {
