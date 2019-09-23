@@ -8,26 +8,11 @@ For questions queries please visit this link (coming soon)
 
 ## Installation
 
-**Install via Composer**
-
 ```composer require inimist/cakephp-captcha:dev-master```
 
 and
 
 ```bin/cake plugin load Captcha -b -r```
-
-**Install via Download**
-
-Download and copy all files to your app's <ROOT>/plugins/captcha folder of your cakephp 3 application 
-	
-OR
-	
-In the command line, cd command to your app's plugins folder and run git clone
-
-```
-$ cd myapp/plugins
-$ git clone https://github.com/inimist/cakephp3-captcha.git captcha
-```
 
 ## Implementation
 
@@ -50,10 +35,12 @@ $ git clone https://github.com/inimist/cakephp3-captcha.git captcha
 3. Add Behavior to your Model/Table
 
 	Place  ```$this->addBehavior('Captcha.Captcha', ['field'=>'<fieldname>'])``` in your **Model** (Table class)
+	If you use Google Recaptcha add "secret" option with its value which you get from Google Recaptcha. You will add Google site key in the view file below
 
 4. Create an input field in your view's **form** as:
 
-	```echo $this->Captcha->create('<fieldname>');```
+	```echo $this->Captcha->create('<fieldname>', ['options'=>'here', another=>'option']);```
+	If you use Google Recaptcha add "sitekey" option with value here. See examples below.
 
 5. In your controller in which your form data is processed, place:
 
