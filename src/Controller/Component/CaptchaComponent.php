@@ -1,6 +1,10 @@
 <?php
 /**
- * Captcha Component
+ * captcha/src/Controller/Component/CaptchaComponent.php
+ * @author     Arvind Kumar
+ * @link       https://captcha.inimisttech.com
+ * @copyright  Copyright © 2019 https://inimisttech.com
+ * @version 1.1 - Tested with Cakephp 3.8.x
  *
  * Component for Generating Captcha
  *
@@ -68,6 +72,7 @@
  * 2018-06-25  - Tested with Cakephp 3.6
                - Added support to install via composer
                - fixed bugs in Helper
+ * 2019-08-01  - Tested with Cakephp 3.8
  *
  */
 namespace Captcha\Controller\Component;

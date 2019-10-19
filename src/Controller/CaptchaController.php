@@ -1,11 +1,10 @@
 <?php
 /**
- * Controller for the use of Captcha
- * @author     Arvind K.
- * @link       http://inimisttech.com/
- * @copyright  Copyright © 2018 http://inimisttech.com/
- * @License  MIT License (http://www.opensource.org/licenses/mit-license.php)
- * @version 1.0 - Tested with Cakephp 3.6
+ * captcha/src/Controller/CaptchaController.php
+ * @author     Arvind Kumar
+ * @link       https://captcha.inimisttech.com
+ * @copyright  Copyright © 2019 https://inimisttech.com
+ * @version 1.1 - Tested with Cakephp 3.8.x
  */
 
 namespace Captcha\Controller;

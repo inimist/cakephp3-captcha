@@ -1,13 +1,12 @@
 <?php
 /**
- * Helper for the use of Captcha
+ * captcha/src/Controller/AppController.php
  * @author     Arvind Kumar
- * @link       http://inimist.com/
- * @copyright  Copyright © 2014 http://inimist.com/
- * @version 3.0 - Tested with Cakephp 3.5.x
+ * @link       https://captcha.inimisttech.com
+ * @copyright  Copyright © 2019 https://inimisttech.com
+ * @version 1.1 - Tested with Cakephp 3.8.x
  */
 
-// plugins/Captcha/src/Controller/AppController.php
 namespace Captcha\Controller;
 
 use App\Controller\AppController as BaseController;
