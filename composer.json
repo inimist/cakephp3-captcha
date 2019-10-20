@@ -1,5 +1,4 @@
 {
-    "version": "1.2",
 	"name": "inimist/cakephp-captcha",
     "type": "cakephp-plugin",
     "description": "CakePHP Captcha Plugin, Image, Match and Google Recaptcha Support",
@@ -9,12 +8,14 @@
     "authors": [
         {
             "name": "Arvind Kumar",
-            "email": "arvind@inimisttech.com"
+            "email": "arvind@inimisttech.com",
+            "homepage": "https://inimisttech.com",
+            "role": "Developer"
         }
     ],
     "require": {
 		"php": "^5.6|^7.0",
-		"cakephp/cakephp": "^3.8.0"
+		"cakephp/cakephp": "^3.5.0"
 	},
 	"require-dev": {
 	},
