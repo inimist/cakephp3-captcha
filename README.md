@@ -2,6 +2,16 @@
 
 **Bot Detect using Image captcha, Math captcha and Google-recaptcha for CakePHP 3**
 
+## Quick Features
+
+No Custom Code required
+Quick install. Just add three lines of code in your Controller, Model and View 1 line each.
+Works in Model Validation
+Easy to switch between Google Recaptcha, Image Captcha and Math Challenge
+Multiple Captchas on single page
+Multiple Demo available.
+Demo available as CakePHP Plugin
+
 ## Installation
 
 ```composer require inimist/cakephp-captcha```
