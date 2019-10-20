@@ -8,7 +8,7 @@ For questions queries please visit this link (coming soon)
 
 ## Installation
 
-```composer require inimist/cakephp-captcha:dev-master```
+```composer require inimist/cakephp-captcha```
 
 and
 
