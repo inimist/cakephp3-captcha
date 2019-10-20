@@ -142,7 +142,7 @@ class CaptchaComponent extends Component	{
       'height' => 40,
       'length' => 6,
       'theme'=>'default',
-      'fontAdjustment'=>0.50,
+      'fontAdjustment'=>0.40,
       'type'=>'image',
       'field' => 'captcha',
       'rotate' => true,

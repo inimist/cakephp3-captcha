@@ -1,7 +1,7 @@
 {
 	"name": "inimist/cakephp-captcha",
     "type": "cakephp-plugin",
-    "description": "CakePHP Captcha Plugin, Image, Match and Google Recaptcha Support",
+    "description": "CakePHP Captcha Plugin, Image, Math and Google Recaptcha Support",
     "keywords": ["cakephp", "plugin", "captcha", "security", "recaptcha"],
     "homepage": "https://github.com/inimist/cakephp3-captcha",
     "license": "MIT",

@@ -1,10 +1,6 @@
 # CakePHP Captcha Plugin
 
-**Image captcha, Math captcha and Google-recaptcha support for CakePHP**
-
-<a href="https://captcha.inimisttech.com">Demo</a>.
-
-For questions queries please visit this link (coming soon)
+**Bot Detect using Image captcha, Math captcha and Google-recaptcha for CakePHP 3**
 
 ## Installation
 
@@ -20,7 +16,7 @@ and
 
 	If you ran ```bin/cake plugin load Captcha -b -r``` above skip this step.
 	
-	Place ```Plugin::load('Captcha', ['routes' => true, 'autoload' => true]);``` in your application's **Application.php** or **bootstrap.php** file, whichever applicable.
+	Place ```Plugin::load('Captcha');``` in your application's **Application.php** or **bootstrap.php** file.
 
 2. Load **Capthca component**
 
@@ -35,12 +31,12 @@ and
 3. Add Behavior to your Model/Table
 
 	Place  ```$this->addBehavior('Captcha.Captcha', ['field'=>'<fieldname>'])``` in your **Model** (Table class)
-	If you use Google Recaptcha add "secret" option with its value which you get from Google Recaptcha. You will add Google site key in the view file below
+	Note: If you use Google Recaptcha add "secret" option with its value which you get from Google. Also, add Google site key in the view file.
 
 4. Create an input field in your view's **form** as:
 
-	```echo $this->Captcha->create('<fieldname>', ['options'=>'here', another=>'option']);```
-	If you use Google Recaptcha add "sitekey" option with value here. See examples below.
+	```echo $this->Captcha->create('<fieldname>', $options);```
+	If you use Google Recaptcha add "sitekey" option with its value here. See examples below.
 
 5. In your controller in which your form data is processed, place:
 
@@ -52,59 +48,50 @@ and
 	$this->Users->setCaptcha('securitycode', $this->Captcha->getCode('securitycode'));
 	$user = $this->Users->patchEntity($user, $this->request->data);
 	```
-	
-See **example/src** folder for a working example.
+
+A fully working demo can be found [here](https://captcha.inimisttech.com). You can install a fully working demo as a plugin from [here](https://github.com/inimist/cakephp-captcha-demo).
 
 ##More examples
 
-###Custom settings:
+###$options:
 
-    echo $this->Form->create("Signups");
-    $custom1['width']=150;
-    $custom1['height']=50;
-    $custom1['theme']='default';
-    echo $this->Captcha->create('captcha_input_field_name', $custom1);
-    echo $this->Form->button(__('Submit'));
-    echo $this->Form->end();
+    $options['width']=150;
+    $options['height']=50;
+    $options['theme']='default';
+    echo $this->Captcha->create('captcha_input_field_name', $options);
 
-###Multiple captchas:
+###Multiple Captchas on same page:
 
     //form 1
-    echo $this->Form->create("Signups",['url' => ['controller'=>'signups','action' =>'add']]);
-    $custom1['width']=150;
-    $custom1['height']=50;
-    echo $this->Captcha->create('captcha_input_field_name1', $custom1);
-    echo $this->Form->button(__('Submit'));
-    echo $this->Form->end();
+    $options1['width']=150;
+    $options1['height']=50;
+    echo $this->Captcha->create('captcha_input_field_name1', $options1);
 
     //form 2, A math captcha, anywhere on the page
-    echo $this->Form->create("Users", ['url' => ['controller'=>'users','action' => 'add']]);
-    $custom2['type']='math';
+    $options2['type']='math';
     echo $this->Captcha->create('captcha_input_field_name2', $custom2);
-    echo $this->Form->button(__('Submit'));
-    echo $this->Form->end();
 
+**Options for view template. Ex: `$this->Captcha->create('field_name', $options)`:**
 
-**Settings that can be set in your view file:**
+* *field*: field name (Optional. Default "captcha")
+* *type*: recaptcha/image/math (Optional: Default "image")
+* *width*: width of image captcha (Optional. Applies to type "image" only)
+* *height*: height of image captcha (Optional. Applies to type "image" only)
+* *theme*: default/random image captcha color pattern (Optional. Applies to type "image" only ; default "default")
+* *length*: number of characters in image captcha (Optional. Applies to type "image" only)
+* *angle*: angle of rotation for characters in image captcha (Optional. Applies to type "image" only)
+* *fontAdjustment*: Font size for Image Captcha (Optional. Applies to type "image" only)
+* *reload_txt*: Reload Captcha Text (Optional)
+* *clabel*: Label for Image Captcha field (Optional)
+* *mlabel*: Label for Math Captcha field (Optional)
+* *sitekey*: Googel Recaptcha Sitekey (Required. Applies to type "recatpcha" only)
 
-* *field*: field name.
-* *type*: image or math. If set to 'math' all following settings will be 
-obsolete
-* *width*: width of image captcha
-* *height*: height of image captcha
-* *theme*: theme/difficulty image captcha
-* *length*: number of characters in image captcha
-* *angle*: angle of rotation for characters in image captcha
+(All above options can also be set from controller. Ex: `$this->loadComponent('Captcha.Captcha', $options)`)
 
-Additional settings that can be set.
+**Options for model. Ex: $this->addBehavior('Captcha.Captcha', $options);
 
-* *fontAdjustment*: Responsible for the font size relational to Captcha Image 
-Size
-* *reload_txt*: The phrase which appears as a Captcha Reload link
-* *clabel*: Label for Image Captcha Value input field
-* *mlabel*: Label for Math Captcha Value input field
-
-That should be it.
+* *field*: field name (optional: default "captcha")
+* *secret*: Googel Recaptcha Secret (required for type "recatpcha")
 
 ## Known Issues:
 
@@ -117,16 +104,3 @@ That should be it.
 ## Updates
 
 2019-09-23 - Tested with CakePHP 3.8
-
-## Layout
-
-Three basic options, image captcha, math captcha and google-recaptcha
-
-Check older version for more options here.. These should be valid in this version as well.
-
-
------------------------------
-Looking for a CakePHP Developer?
------------------------------
-* I like to help with building websites, CRMs, SaaS applications and custom solutions using **CakePHP** & **Wordpress**. [Contact me](https://inimisttech.com/contact/).
-* Upwork: https://www.upwork.com/freelancers/~01ea3d34e0a88133b3
