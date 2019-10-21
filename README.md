@@ -2,15 +2,20 @@
 
 **Bot Detect using Image captcha, Math captcha and Google-recaptcha for CakePHP 3**
 
+## Why to use this plugin?
+
+* To display Google Recaptcha / Image Captcha / Math Challenge for web forms
+
+This CakePHP Captcha plugin requires CakePHP 3.6+.
+
 ## Quick Features
 
-* No Custom Code required
-* Quick install. Just add three lines of code in your Controller, Model and View 1 line each.
-* Works in Model Validation
-* Easy to switch between Google Recaptcha, Image Captcha and Math Challenge
-* Multiple Captchas on single page
+* No Custom Code required.
+* Quick install. Just add 3 lines, on each in Controller, Model and View.
+* Works as Model Validation.
+* Multiple Captchas on single page.
 * Multiple Demo available.
-* Demo available as CakePHP Plugin
+* Demo available as CakePHP Plugin.
 
 ## Installation
 
@@ -48,7 +53,7 @@ and
 	```echo $this->Captcha->create('<fieldname>', $options);```
 	If you use Google Recaptcha add "sitekey" option with its value here. See examples below.
 
-5. In your controller in which your form data is processed, place:
+5. In your controller in which your form data is processed, place (required with image and math catpcha):
 
 	```$this->Users->setCaptcha('<fieldname>', $this->Captcha->getCode('<fieldname>'));```
 
