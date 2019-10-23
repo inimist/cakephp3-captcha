@@ -4,7 +4,7 @@
  * @author     Arvind Kumar
  * @link       https://captcha.inimisttech.com
  * @copyright  Copyright © 2019 https://inimisttech.com
- * @version 1.1 - Tested with Cakephp 3.8.x
+ * @version 1.3 - Tested with Cakephp 3.8.x
  *
  * Component for Generating Captcha
  *
@@ -261,12 +261,7 @@ class CaptchaComponent extends Component
                 $this->__imageCaptcha();
                 break;
             case 'math';
-                /*if(isset($this->Controller->request->data[$this->settings['model']][$this->settings['field']]))  {
-                $this->Controller->Session->write('security_code_math', $this->Controller->Session->read('security_code'));
-                }*/
-                
                 $this->__mathCaptcha();
-                //echo __($this->settings['stringOperation']);
                 break;
         endswitch;
     }
