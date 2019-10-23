@@ -87,7 +87,7 @@ class CaptchaHelper extends Helper {
             break;
             case 'math':
                 $qstring = array_merge($qstring, array('type'=>'math'));
-                if(isset($this->_config['stringOperation']))   {
+                /*if(isset($this->_config['stringOperation']))   {
                     $html .= $this->_config['mlabel'] .  $this->_config['stringOperation'].' = ?';
                 }   else    {
                     ob_start();
@@ -95,11 +95,12 @@ class CaptchaHelper extends Helper {
                     @$this->View->requestAction(array('plugin'=>$plugin, 'controller'=>$controller, 'action'=>$action, '?'=> $qstring));
                     $mathstring = ob_get_contents();
                     ob_end_clean();
-                }
+                }*/
                 $errorclass='';
                 if($this->Form->isFieldError($field)) $errorclass = 'error';
                 $html .= '<div class="input text required '.$errorclass.'">' . $this->Form->label($field, $this->_config['mlabel']) . '</div>';
-                $html .= '<div><strong>' . $mathstring . '</strong>' . ' = ?</div>';
+                $html .= $this->Html->image(array('plugin'=>$plugin, 'controller'=>$controller, 'action'=>$action, '?'=> $qstring), array('hspace'=>2));
+                //$html .= '<div><strong>' . $mathstring . '</strong>' . ' = ?</div>';
                 $html .= $this->Form->control($field, array('autocomplete'=>'off','label'=>false,'class'=>''));
             break;
             case 'recaptcha':
