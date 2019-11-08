@@ -55,6 +55,10 @@ class CaptchaHelper extends Helper {
         $html = '';
 
         $this->_config = array_merge($this->_config, (array)$config);
+	    
+	$this->_config['width'] = ($this->_config['width'] > 500) ? 500 : $this->_config['width'];
+	    
+	$this->_config['height'] = ($this->_config['height'] > 500) ? 500 : $this->_config['height'];
 
         $this->_config['reload_txt'] = isset( $this->_config['reload_txt']) ? __($this->_config['reload_txt']) : __('Can\'t read? Reload');
 
