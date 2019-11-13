@@ -51,7 +51,6 @@ and
 4. Create an input field in your view's **form** as:
 
 	```echo $this->Captcha->create('<fieldname>', $options);```
-	If you use Google Recaptcha add "sitekey" option with its value here. See examples below.
 
 5. In your controller in which your form data is processed, place (required with image and math catpcha):
 
@@ -68,7 +67,21 @@ A fully working demo can be found [here](https://captcha.inimisttech.com). You c
 
 ##More examples
 
-###$options:
+##Settings
+
+The best place for settings is your_apps/config/app.php file. Create a new key named "Captcha" and specify settings there.
+
+    'Captcha' => [
+        'type' => 'recaptcha',
+        'sitekey' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        'secret' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        //'clabel' => 'Enter code',
+        //'reload_txt' => 'Reload??'
+    ]
+
+##More examples
+
+###Options:
 
     $options['width']=150;
     $options['height']=50;
