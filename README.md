@@ -126,7 +126,3 @@ The best place for settings is your_apps/config/app.php file. Create a new key n
 2. **GD library** and True Type Font (**TTF**) support extensions are enabled in PHP.
 
 3. This captcha script uses three random font faces, **anonymous**, **droidsans** and **ubuntu**  to generate fonts in the captcha images. These font faces are placed in the **captcha/src/Lib/Fonts** of this download. I have seen that, sometimes, these font files get corrupted during downloads. If you see font not found error in your error logs and captcha are failed to generate, try downloading these font faces from their respective sources and replace them in the mentioned folder. You can also use different font families by placing them Fonts folder and referencing them in the **CaptchaComponent.php** component file.
-
-## Updates
-
-2019-09-23 - Tested with CakePHP 3.8
