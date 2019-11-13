@@ -9,6 +9,7 @@
 
 namespace Captcha\View\Helper;
 
+use Cake\Core\Configure;
 use Cake\View\Helper;
 use Cake\View\View;
 
@@ -22,17 +23,18 @@ class CaptchaHelper extends Helper {
 
   public $helpers = ['Html', 'Form'];
 
-    protected $_defaultConfig = [
-        'type'=>'image',
-        'theme'=>'default',
-        'sitekey'=>'xxxxxxxxxxxxxxxxxxxxxx-xx', //add sitekey here or in view file if it is Google Recaptcha
+    /*protected $_captchaConfig = [
         'plugin'=>'Captcha',
         'controller'=>'Captcha',
         'action'=>'create',
+    ];*/
+
+    protected $_defaultConfig = [
+        'type'=>'image',
+        'theme'=>'default',
         'width'=>120,
         'height'=>40,
         'length'=>6
-        
     ];
 
 /**
@@ -46,15 +48,23 @@ class CaptchaHelper extends Helper {
  * @param array $config Settings array Settings array
  */
     public function __construct(View $View, $config = []) {
+        //$this->setConfig(Configure::read('Recaptcha'));
         $this->View = $View;
         parent::__construct($View, $config);
     }
 
     function create($field='captcha', $config=array()) {
+        //debug($config);
+        // Merge Options given by user in config/recaptcha
+        
+        $this->setConfig(Configure::read('Recaptcha'));
+        $this->setConfig( $config );
+
+        //debug($this->getConfig());
 
         $html = '';
 
-        $this->_config = array_merge($this->_config, (array)$config);
+        $this->_config = $this->getConfig();
 
         $this->_config['reload_txt'] = isset( $this->_config['reload_txt']) ? __($this->_config['reload_txt']) : __('Can\'t read? Reload');
 
