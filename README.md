@@ -51,7 +51,6 @@ and
 4. Create an input field in your view's **form** as:
 
 	```echo $this->Captcha->create('<fieldname>', $options);```
-	If you use Google Recaptcha add "sitekey" option with its value here. See examples below.
 
 5. In your controller in which your form data is processed, place (required with image and math catpcha):
 
@@ -66,16 +65,28 @@ and
 
 A fully working demo can be found [here](https://captcha.inimisttech.com). You can install a fully working demo as a plugin from [here](https://github.com/inimist/cakephp-captcha-demo).
 
-##More examples
+## Settings
 
-###$options:
+The best place for settings is your_apps/config/app.php file. Create a new key named "Captcha" and specify settings there.
+
+    'Captcha' => [
+        'type' => 'recaptcha',
+        'sitekey' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        'secret' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        //'clabel' => 'Enter code',
+        //'reload_txt' => 'Reload??'
+    ]
+
+## More examples
+
+### Options:
 
     $options['width']=150;
     $options['height']=50;
     $options['theme']='default';
     echo $this->Captcha->create('captcha_input_field_name', $options);
 
-###Multiple Captchas on same page:
+### Multiple Captchas on same page:
 
     //form 1
     $options1['width']=150;
@@ -114,8 +125,4 @@ A fully working demo can be found [here](https://captcha.inimisttech.com). You c
 
 2. **GD library** and True Type Font (**TTF**) support extensions are enabled in PHP.
 
-3. This captcha script uses three font faces, **anonymous**, **droidsans** and **ubuntu**  to generate fonts in the captcha images. These font faces are placed in the **captcha/src/Lib/Fonts** of this download. I have seen that, sometimes, these font files get corrupted during downloads. If you see font not found error in your error logs and captcha are failed to generate, try downloading these font faces from their respective sources and replace them in the mentioned folder. You can also use different font families by placing them Fonts folder and referencing them in the **CaptchaComponent.php** component file.
-
-## Updates
-
-2019-09-23 - Tested with CakePHP 3.8
+3. This captcha script uses three random font faces, **anonymous**, **droidsans** and **ubuntu**  to generate fonts in the captcha images. These font faces are placed in the **captcha/src/Lib/Fonts** of this download. I have seen that, sometimes, these font files get corrupted during downloads. If you see font not found error in your error logs and captcha are failed to generate, try downloading these font faces from their respective sources and replace them in the mentioned folder. You can also use different font families by placing them Fonts folder and referencing them in the **CaptchaComponent.php** component file.

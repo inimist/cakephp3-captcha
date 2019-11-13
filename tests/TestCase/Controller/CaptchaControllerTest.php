@@ -4,6 +4,7 @@ namespace Captcha\Test\TestCase\Controller;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 use Captcha\Controller\CaptchaController;
+use Cake\Controller\Controller;
 
 /**
  * Captcha\Controller\CaptchaController Test Case
@@ -20,56 +21,27 @@ class CaptchaControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'plugin.Captcha.Captcha'
+        //'plugin.Captcha.Captcha'
     ];
 
-    /**
-     * Test index method
-     *
-     * @return void
-     */
-    public function testIndex()
+    public function setUp()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $Controller = new Controller();
+        $this->CaptchaController = new CaptchaController($Controller);
     }
 
     /**
-     * Test view method
+     * Test create method
      *
      * @return void
      */
-    public function testView()
+    public function testCreate()
     {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test add method
-     *
-     * @return void
-     */
-    public function testAdd()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test edit method
-     *
-     * @return void
-     */
-    public function testEdit()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test delete method
-     *
-     * @return void
-     */
-    public function testDelete()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
+        $id = 1;
+        $this->get(['plugin' => 'Captcha', 'controller' => 'Captcha', 'action' => 'create', $id]);
+        $this->assertResponseCode(200);
+        $this->assertContentType('image/png');
+        $this->assertHeaderContains('Content-Transfer-Encoding', 'binary');
+        $this->assertResponseNotEmpty();
     }
 }

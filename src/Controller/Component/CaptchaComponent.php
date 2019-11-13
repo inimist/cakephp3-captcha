@@ -133,7 +133,6 @@ class CaptchaComponent extends Component
      * @var array
      */
     public $settings = array('width' => 120, 'height' => 40, 'length' => 6, 'theme' => 'default', 'fontAdjustment' => 0.50, 'type' => 'image', 'field' => 'captcha', 'rotate' => true, 'reload_txt' => 'Can\'t read? Reload', 'clabel' => 'Enter security code shown above:', 'mlabel' => 'Answer simple math:');
-    
     public function initialize(array $config)
     {
         //debug($this->Session->read());
@@ -347,7 +346,7 @@ class CaptchaComponent extends Component
         $width = 80;
         $height = 25;
 
-        $fontsize = 15;
+        $fontsize = 13;
         $image = @imagecreate($width, $height) or die('Cannot initialize new GD image stream');
         imagecolorallocate($image, 255, 255, 255);
 		$text_color  = imagecolorallocate($image, 0, 0, 0);
