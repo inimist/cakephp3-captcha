@@ -65,9 +65,7 @@ and
 
 A fully working demo can be found [here](https://captcha.inimisttech.com). You can install a fully working demo as a plugin from [here](https://github.com/inimist/cakephp-captcha-demo).
 
-##More examples
-
-##Settings
+## Settings
 
 The best place for settings is your_apps/config/app.php file. Create a new key named "Captcha" and specify settings there.
 
@@ -79,16 +77,16 @@ The best place for settings is your_apps/config/app.php file. Create a new key n
         //'reload_txt' => 'Reload??'
     ]
 
-##More examples
+## More examples
 
-###Options:
+### Options:
 
     $options['width']=150;
     $options['height']=50;
     $options['theme']='default';
     echo $this->Captcha->create('captcha_input_field_name', $options);
 
-###Multiple Captchas on same page:
+### Multiple Captchas on same page:
 
     //form 1
     $options1['width']=150;
@@ -127,7 +125,7 @@ The best place for settings is your_apps/config/app.php file. Create a new key n
 
 2. **GD library** and True Type Font (**TTF**) support extensions are enabled in PHP.
 
-3. This captcha script uses three font faces, **anonymous**, **droidsans** and **ubuntu**  to generate fonts in the captcha images. These font faces are placed in the **captcha/src/Lib/Fonts** of this download. I have seen that, sometimes, these font files get corrupted during downloads. If you see font not found error in your error logs and captcha are failed to generate, try downloading these font faces from their respective sources and replace them in the mentioned folder. You can also use different font families by placing them Fonts folder and referencing them in the **CaptchaComponent.php** component file.
+3. This captcha script uses three random font faces, **anonymous**, **droidsans** and **ubuntu**  to generate fonts in the captcha images. These font faces are placed in the **captcha/src/Lib/Fonts** of this download. I have seen that, sometimes, these font files get corrupted during downloads. If you see font not found error in your error logs and captcha are failed to generate, try downloading these font faces from their respective sources and replace them in the mentioned folder. You can also use different font families by placing them Fonts folder and referencing them in the **CaptchaComponent.php** component file.
 
 ## Updates
 
