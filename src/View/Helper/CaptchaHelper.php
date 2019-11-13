@@ -4,7 +4,7 @@
  * @author     Arvind Kumar
  * @link       https://captcha.inimisttech.com
  * @copyright  Copyright © 2019 https://inimisttech.com
- * @version 1.1 - Tested with Cakephp 3.8.x
+ * @version 1.3
  */
 
 namespace Captcha\View\Helper;
@@ -73,9 +73,8 @@ class CaptchaHelper extends Helper {
         $html = '';
 
         $this->_config = $this->getConfig();
-	      $this->_config['width'] = ($this->_config['width'] > 500) ? 500 : $this->_config['width'];
-	    
-	      $this->_config['height'] = ($this->_config['height'] > 500) ? 500 : $this->_config['height'];
+        $this->_config['width'] = ($this->_config['width'] > 500) ? 500 : $this->_config['width'];
+        $this->_config['height'] = ($this->_config['height'] > 500) ? 500 : $this->_config['height'];
 
         $this->_config['reload_txt'] = isset( $this->_config['reload_txt']) ? __($this->_config['reload_txt']) : __('Can\'t read? Reload');
 
