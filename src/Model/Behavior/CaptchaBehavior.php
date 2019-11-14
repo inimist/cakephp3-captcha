@@ -25,18 +25,15 @@ namespace Captcha\ORM\Behavior;
 
 use Cake\Event\Event;
 use Cake\ORM\Behavior;
-use Cake\ORM\Table;
-use Cake\ORM\Entity;
-use Cake\ORM\Query;
 use Cake\Validation\Validator;
+use Cake\Core\Configure;
 
 class CaptchaBehavior extends Behavior
 {
 
 	protected $_defaultConfig = [
 		'field' => 'captcha',
-		'message' => 'Captcha validation failed',
-		'secret'=>'',
+		'message' => 'Captcha validation failed'
 	];
 
 	private $captcha = null;
@@ -46,6 +43,9 @@ class CaptchaBehavior extends Behavior
 	 *
 	 */
 	public function validateCaptcha($value, array $context) {
+
+        $this->setConfig(Configure::read('Captcha'));
+
 		if(isset($context['data']['g-recaptcha-response']))	{
 			$g_recaptcha_response = $context['data']['g-recaptcha-response'];
 			$secret = $this->_config['secret'];
