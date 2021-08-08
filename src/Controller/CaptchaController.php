@@ -3,7 +3,7 @@
  * captcha/src/Controller/CaptchaController.php
  * @author     Arvind Kumar
  * @link       https://captcha.inimisttech.com
- * @copyright  Copyright © 2019 https://inimisttech.com
+ * @copyright  Copyright Â© 2019 https://inimisttech.com
  * @version 1.1 - Tested with Cakephp 3.8.x
  */
 
@@ -27,9 +27,13 @@ class CaptchaController extends AppController
         if(isset($this->Auth) && is_object($this->Auth)) $this->Auth->allow(['create']);
     }
     function create()	{
-        $this->autoRender = false;
         $this->loadComponent('Captcha.Captcha'); //or load on the fly!
         $this->viewBuilder()->setLayout('ajax');
-        $this->Captcha->create();
+        $data = $this->Captcha->generate();
+        if(!$data['error'])
+        {
+            return $this->response->withType('jpg')->withStringBody($data['data']);
+        }
+        //set error
     }
 }
