@@ -82,7 +82,13 @@ use Cake\Controller\ComponentRegistry;
 
 class CaptchaComponent extends Component
 {
-    
+    /**
+     * A flag to determin that output should print to browser directly or no
+     *
+     * @var bool
+     */
+    private $outputToBrowser = true;
+
     /**
      * Default monospaced fonts available
      *
@@ -252,7 +258,27 @@ class CaptchaComponent extends Component
     {
         return $this->sessionKey;
     }
-    
+
+    function generate()
+    {
+        $old = $this->outputToBrowser;
+        $return = ['error' => true, 'data' => ''];
+        $this->outputToBrowser = false;
+        switch ($this->__getType()):
+            case 'image';
+                $return = ['error' => false, 'data' => $this->__imageCaptcha()];
+                break;
+            case 'math';
+                $return = ['error' => false, 'data' => $this->__mathCaptcha()];
+                break;
+        endswitch;
+        $this->outputToBrowser = $old;
+        return $return;
+    }
+
+    /**
+     * @deprecated Deprecated use generate() instead.
+     */
     function create($settings = array())
     {
         switch ($this->__getType()):
@@ -367,9 +393,15 @@ class CaptchaComponent extends Component
         }
 
         /* output captcha image to browser */
-        header('Content-Type: image/jpeg');
+        if (!$this->outputToBrowser){
+            ob_start();
+        }else{
+            header('Content-Type: image/jpeg');
         imagejpeg($image);
         imagedestroy($image);
+        if (!$this->outputToBrowser){
+            return ob_get_clean() ?: '';
+        }
     }
     
     function __imageCaptcha()
@@ -434,9 +466,15 @@ class CaptchaComponent extends Component
         //@ob_end_clean(); //clean buffers, as a fix for 'headers already sent errors..'
         
         /* output captcha image to browser */
-        header('Content-Type: image/jpeg');
+        if (!$this->outputToBrowser){
+            ob_start();
+        }else{
+            header('Content-Type: image/jpeg');
         imagejpeg($image);
         imagedestroy($image);
+        if (!$this->outputToBrowser){
+            return ob_get_clean() ?: '';
+        }
     }
     function getCode($sessionKey)
     {
